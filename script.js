@@ -6,7 +6,7 @@ function computerPlay() {
 
 // Returns input from the user and converts it to upper case
 function playerPlay() {
-  let selection = prompt("Rock, paper, scissors? (Press Control + Shift + I to open the developer tools)");
+  let selection = prompt("Rock, paper, scissors?");
   if(selection == null || selection == "" || selection == false || !selection) {
     alert("Cancelled");
     return false;
