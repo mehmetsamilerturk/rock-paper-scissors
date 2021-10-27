@@ -6,13 +6,7 @@ function computerPlay() {
 
 // Returns input from the user and converts it to upper case
 function playerPlay() {
-  let selection = prompt("Rock, paper, scissors?");
-  if(selection == null || selection == "" || selection == false || !selection) {
-    alert("Cancelled");
-    return false;
-  } else {
-    return selection.toUpperCase();
-  }
+  return prompt("Rock, paper, scissors?").toUpperCase();
 }
 // Create variables to store scores and rounds
 let currentRound = 0;
