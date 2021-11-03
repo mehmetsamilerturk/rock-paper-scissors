@@ -56,24 +56,19 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// Play a 5 round game that keeps score and reports a winner or loser at the end
-function game() {
-  
-  for(let i=0; i < 5; i++) {
-    currentRound++;
-    console.log("Round " + currentRound);
-    console.log(playRound(playerPlay(), computerPlay()));
-    console.log("Your score: " + playerScore);
-    console.log("Computer score: " + computerScore);   
-  }
+const displayResults = document.querySelector('#displayResults');
 
-  if(playerScore > computerScore) {
-    console.log("Congratulations! Player won");
-  } else if(computerScore > playerScore) {
-    console.log("Better luck next time. Computer won");
-  } else {
-    console.log("It's a tie!");
-  }
-}
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+  displayResults.textContent = playRound('ROCK', computerPlay());
+});
 
-game();
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {
+  displayResults.textContent = playRound('PAPER', computerPlay());
+});
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {
+  displayResults.textContent = playRound('SCISSORS', computerPlay());
+});
